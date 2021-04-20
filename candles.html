@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="site.css" type="text/css" />
+    <title>All Candles | Sharon's Candle Shop</title>
+    <style></style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="candles.html">All Candles</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <aside><img src="images/logo.png" alt="Sharon's Candle Shop" /></aside>
+      <article>
+        <h1>All Candles</h1>
+        <section class="columns-desktop">
+          <div class="candle">
+            <img src="images/bergamot.png" alt="Bergamot Candle" />
+            <div class="columns">
+              <div class="title">Bergamot Candle</div>
+              <div class="price">£12.95</div>
+            </div>
+            <p class="desc">A Summer clasic!</p>
+            <button data-order="bergamot">Order</button>
+          </div>
+
+          <div class="candle">
+            <img src="images/pine.png" alt="Pine Candle" />
+            <div class="columns">
+              <div class="title">Pine Candle</div>
+              <div class="price">£15.95</div>
+            </div>
+            <p class="desc">A spring classic!</p>
+            <button data-order="pine">Order</button>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="/"></a>Home</li>
+          <li><a href="candles.html">Candles</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", function (e) {
+      const orderButtons = document.querySelectorAll("button[data-order]");
+
+      orderButtons.forEach(function (button) {
+        button.addEventListener("click", function (e) {
+          const button = e.currentTarget;
+          const container = button.parentNode;
+
+          const order = {
+            id: button.getAttribute("data-order"),
+            title: container.querySelector(".title").innerText,
+            price: container.querySelector(".price").innerText,
+            desc: container.querySelector(".desc").innerText,
+          };
+
+          localStorage.setItem("order", JSON.stringify(order));
+
+          const url = window.location.href.replace(
+            "candles.html",
+            "order.html"
+          );
+          window.location.href = url;
+        });
+      });
+    });
+  </script>
+</html>
