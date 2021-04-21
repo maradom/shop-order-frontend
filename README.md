@@ -1,7 +1,7 @@
 # shop-order-frontend
 
 ## Home page
-![homePage](https://user-images.githubusercontent.com/25387557/115395737-1f017b80-a1dc-11eb-9af8-5c3f287ae140.PNG)
+![Capture](https://user-images.githubusercontent.com/25387557/115540471-fb027080-a295-11eb-8533-04ca6255e317.PNG)
 ## Order page
 ![allCandles](https://user-images.githubusercontent.com/25387557/115395778-2cb70100-a1dc-11eb-95bb-6ff4b5c59807.PNG)
 ## Basket page
